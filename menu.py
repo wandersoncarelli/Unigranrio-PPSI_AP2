@@ -2,10 +2,13 @@ from clientes import Clientes
 
 
 class Menu:
+    # Construtor da classe
     def __init__(self):
-        self.menu_opcao = self.cliente_opcao = -1
-        self.main_menu()
+        # Variáveis para validar as repostas das opções dos menus
+        self.menu_opcao = -1
+        self.main_menu()  # Inicia o menu principal
 
+    # Construção do menu principal
     def main_menu(self):
         print('''MENU PRINCIPAL:
     
@@ -14,10 +17,11 @@ class Menu:
     [3] - Vendas
     [0] - Sair
                 ''')
-        while self.menu_opcao < 0 or self.menu_opcao > 3:
-            self.menu_opcao = int(input('Digite a opção escolhida: '))
-            if self.menu_opcao < 0 or self.menu_opcao > 3:
-                print('Opção inválida.\n')
+        while self.menu_opcao < 0 or self.menu_opcao > 3:  # Enquanto a resposta não estiver nas opções
+            self.menu_opcao = int(input('Digite a opção escolhida: '))  # Vai solicitar a resposta
+            print()
+            if self.menu_opcao < 0 or self.menu_opcao > 3:  # Valida a resposta
+                print('Opção inválida.\n')  # Mensagem de erro
         if self.menu_opcao == 0:
             print('Você saiu do programa.')
             exit()
@@ -28,10 +32,11 @@ class Menu:
         # elif self.menu_opcao == 3:
         #     self.menu_vendas()
 
+    # Construção do menu de clientes
     def menu_cliente(self):
-        self.menu_opcao = self.cliente_opcao = -1
-        print('''
-MENU CLIENTES:
+        self.menu_opcao = -1
+        cliente_opcao = -1
+        print('''MENU CLIENTES:
 
     [1] - Cadastrar cliente
     [2] - Consultar cadastro
@@ -39,29 +44,39 @@ MENU CLIENTES:
     [4] - Apagar cadastro
     [0] - Voltar ao menu anterior
             ''')
-        while self.cliente_opcao < 0 or self.cliente_opcao > 4:
-            self.cliente_opcao = int(input('Digite a opção escolhida: '))
-            if self.cliente_opcao < 0 or self.cliente_opcao > 4:
-                print('Opção inválida.')
-        if self.cliente_opcao == 0:
+        while cliente_opcao < 0 or cliente_opcao > 4:
+            cliente_opcao = int(input('Digite a opção escolhida: '))
             print()
+            if cliente_opcao < 0 or cliente_opcao > 4:
+                print('Opção inválida.')
+        if cliente_opcao == 0:
             self.main_menu()
-        elif self.cliente_opcao == 1:
+        elif cliente_opcao == 1:
             Clientes().cadastrar()
             self.menu_cliente()
-        elif self.cliente_opcao == 2:
-            if len(Clientes().clientes) > 0:
-                Clientes().consultar()
+        elif cliente_opcao == 2:
+            if len(Clientes().clientes) == 0:
+                print('Não existem clientes cadastrados.\n')
             else:
-                print('Não existem clientes cadastrados.')
+                Clientes().consultar()
             self.menu_cliente()
-        elif self.cliente_opcao == 3:
-            Clientes().atualizar()
-        elif self.cliente_opcao == 4:
-            Clientes().apagar()
+        elif cliente_opcao == 3:
+            if len(Clientes().clientes) == 0:
+                print('Não existem clientes cadastrados.\n')
+            else:
+                Clientes().atualizar()
+            self.menu_cliente()
+        elif cliente_opcao == 4:
+            if len(Clientes().clientes) == 0:
+                print('Não existem clientes cadastrados.\n')
+            else:
+                Clientes().apagar()
+            self.menu_cliente()
 
+    # Construção do menu de motocicletas (ainda não iniciado)
     def menu_moto(self):
         pass
 
+    # Construção do menu de vendas (ainda não iniciado)
     def menu_vendas(self):
         pass

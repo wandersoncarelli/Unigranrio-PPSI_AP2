@@ -1,28 +1,5 @@
 from clientes import Clientes
 
-# Menu 1 - Clientes (FUNCIONANDO)
-#   Sub-menu 1 - Cadastrar (FUNCIONANDO)
-#   Sub-menu 2 - Consultar (FUNCIONANDO)
-#   Sub-menu 3 - Atualizar (FUNCIONANDO)
-#   Sub-menu 4 - Apagar (FUNCIONANDO)
-#   Sub-menu 0 - Voltar ao menu principal (FUNCIONANDO)
-
-# Menu 2 - Motocicletas (NAO INICIADO)
-#   Sub-menu 1 - Cadastrar
-#   Sub-menu 2 - Consultar
-#   Sub-menu 3 - Atualizar
-#   Sub-menu 4 - Apagar
-#   Sub-menu 0 - Voltar ao menu principal
-
-# Menu 3 - Vendas (NAO INICIADO)
-#   Sub-menu 1 - Cadastrar
-#   Sub-menu 2 - Consultar
-#   Sub-menu 3 - Atualizar
-#   Sub-menu 4 - Apagar
-#   Sub-menu 0 - Voltar ao menu principal
-
-# Menu 0 - Sair (FUNCIONANDO)
-
 
 class Application:
     # Construtor da classe
@@ -38,7 +15,7 @@ class Application:
     [1] - Clientes
     [2] - Motocicletas
     [3] - Vendas
-    [0] - Sair
+    [0] - Sair do programa
     ''')
 
         while self.menu_opcao < 0 or self.menu_opcao > 3:  # Enquanto a resposta não estiver nas opções

@@ -22,12 +22,12 @@ informações referente aos clientes, motocicletas e vendas.
     - [x] Apagar
     - [x] Voltar ao menu principal
     
-  - [ ] Motocicletas 
-    - [ ] Cadastrar
-    - [ ] Consultar
-    - [ ] Atualizar
-    - [ ] Apagar
-    - [ ] Voltar ao menu principal
+  - [x] Motocicletas 
+    - [x] Cadastrar
+    - [x] Consultar
+    - [x] Atualizar
+    - [x] Apagar
+    - [x] Voltar ao menu principal
     
   - [ ] Vendas
     - [ ] Cadastrar

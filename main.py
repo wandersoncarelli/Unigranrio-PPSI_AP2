@@ -1,4 +1,5 @@
 from clientes import Clientes
+from motocicletas import Motocicletas
 
 
 class Application:
@@ -30,8 +31,7 @@ class Application:
         elif self.menu_opcao == 1:
             self.menu_cliente()
         elif self.menu_opcao == 2:
-            print('Menu ainda não construido.')
-            # self.menu_moto()
+            self.menu_motocicleta()
         elif self.menu_opcao == 3:
             print('Menu ainda não construido.')
             # self.menu_vendas()
@@ -43,9 +43,9 @@ class Application:
         print('''MENU CLIENTES:
 
     [1] - Cadastrar cliente
-    [2] - Consultar cadastro
-    [3] - Atualizar cadastro
-    [4] - Apagar cadastro
+    [2] - Consultar cliente
+    [3] - Atualizar cliente
+    [4] - Apagar cliente
     [0] - Voltar ao menu anterior
             ''')
         while cliente_opcao < 0 or cliente_opcao > 4:
@@ -78,8 +78,46 @@ class Application:
             self.menu_cliente()
 
     # Construção do menu de motocicletas (ainda não iniciado)
-    def menu_moto(self):
-        pass
+    def menu_motocicleta(self):
+        self.menu_opcao = -1
+        motocicleta_opcao = -1
+        print('''MENU MOTOCICLETAS:
+
+    [1] - Cadastrar motocicleta
+    [2] - Consultar motocicleta
+    [3] - Atualizar motocicleta
+    [4] - Apagar motocicleta
+    [0] - Voltar ao menu anterior
+    ''')
+
+        while motocicleta_opcao < 0 or motocicleta_opcao > 4:
+            motocicleta_opcao = int(input('Digite a opção escolhida: '))
+            print()
+            if motocicleta_opcao < 0 or motocicleta_opcao > 4:
+                print('Opção inválida.')
+        if motocicleta_opcao == 0:
+            self.main_menu()
+        elif motocicleta_opcao == 1:
+            Motocicletas().cadastrar()
+            self.menu_motocicleta()
+        elif motocicleta_opcao == 2:
+            if len(Motocicletas().motocicletas) == 0:
+                print('Não existem motocicletas cadastradas.\n')
+            else:
+                Motocicletas().consultar()
+            self.menu_motocicleta()
+        elif motocicleta_opcao == 3:
+            if len(Motocicletas().motocicletas) == 0:
+                print('Não existem motocicletas cadastradas.\n')
+            else:
+                Motocicletas().atualizar()
+            self.menu_motocicleta()
+        elif motocicleta_opcao == 4:
+            if len(Motocicletas().motocicletas) == 0:
+                print('Não existem motocicletas cadastradas.\n')
+            else:
+                Motocicletas().apagar()
+            self.menu_motocicleta()
 
     # Construção do menu de vendas (ainda não iniciado)
     def menu_vendas(self):

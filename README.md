@@ -29,14 +29,16 @@ informações referente aos clientes, motocicletas e vendas.
     - [x] Apagar
     - [x] Voltar ao menu principal
     
-  - [ ] Vendas
+  - [X] Vendas
     - [X] Cadastrar
-    - [ ] Consultar
-    - [ ] Atualizar
-    - [ ] Apagar
+    - [X] Consultar
+    - [X] Atualizar
+    - [X] Apagar
     - [X] Voltar ao menu principal
     
   - [x] Sair do programa
+
+---
 
 * #### Manipulação de arquivos
   - [ ] Informações de clientes

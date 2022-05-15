@@ -90,7 +90,7 @@ class Clientes:
             self.mostrar_clientes()  # Mostra a lista de clientes cadastrados
 
             while id_atualizar != 0:
-                id_atualizar = int(input('Digite o ID do cliente para atualizar seu cadastro (0 para cancelar): '))
+                id_atualizar = int(input('Digite o ID do cliente para atualizar (0 para cancelar): '))
 
                 if id_atualizar == 0:
                     print('Operação cancelada.\n')
@@ -140,7 +140,7 @@ class Clientes:
                             print('ID inválido.')
                     print()
 
-    # Apagando o cadastro de clientes
+    # Apagando clientes cadastrados
     def apagar(self):
         if len(self.clientes) == 0:
             print('Não existem clientes cadastrados.\n')
@@ -149,7 +149,7 @@ class Clientes:
             self.mostrar_clientes()  # Mostra a lista de clientes cadastrados
 
             while opcao_apagar != 'N':
-                id_apagar = int(input('Digite o ID do cliente para apagar seu cadastro (0 para cancelar): '))
+                id_apagar = int(input('Digite o ID do cliente para apagar (0 para cancelar): '))
 
                 if id_apagar == 0:
                     print('Operação cancelada.\n')

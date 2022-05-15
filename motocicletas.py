@@ -4,7 +4,7 @@
 class Motocicletas:
     motocicletas = []
 
-    # Cadastrando clientes
+    # Cadastrando motocicletas
     def cadastrar(self):
         cadastro = {}  # Dicionário para fazer o cadastro dos clientes
         opcao_cadastrar = ''  # Variável que irá interromper o loop de cadastro
@@ -53,7 +53,7 @@ class Motocicletas:
     # Consultando detalhes das motocicletas cadastradas
     def consultar(self):
         if len(self.motocicletas) == 0:
-            print('Não existe motocicletas cadastradas.\n')
+            print('Não existem motocicletas cadastradas.\n')
         else:
             opcao_consultar = ''  # Variável que irá interromper o loop de consulta
             self.mostrar_motocicletas()  # Mostra a lista de motocicletas cadastradas
@@ -86,13 +86,13 @@ class Motocicletas:
     # Atualizando cadastro de motocicletas
     def atualizar(self):
         if len(self.motocicletas) == 0:
-            print('Não existe motocicletas cadastradas.\n')
+            print('Não existem motocicletas cadastradas.\n')
         else:
             id_atualizar = ''  # Variável que irá interromper o loop de atualização
             self.mostrar_motocicletas()  # Mostra a lista de motocicletas cadastradas
 
             while id_atualizar != 0:
-                id_atualizar = int(input('Digite o ID da motocicleta para atualizar seu cadastro (0 para cancelar): '))
+                id_atualizar = int(input('Digite o ID da motocicleta para atualizar (0 para cancelar): '))
 
                 if id_atualizar == 0:
                     print('Operação cancelada.\n')
@@ -137,16 +137,16 @@ class Motocicletas:
                             print('ID inválido.')
                     print()
 
-    # Apagando o cadastro de motocicletas
+    # Apagando motocicletas cadastradas
     def apagar(self):
         if len(self.motocicletas) == 0:
-            print('Não existe motocicletas cadastradas.\n')
+            print('Não existem motocicletas cadastradas.\n')
         else:
             opcao_apagar = ''  # Variável que irá interromper o loop de apagar
             self.mostrar_motocicletas()  # Mostra a lista de motocicletas cadastradas
 
             while opcao_apagar != 'N':
-                id_apagar = int(input('Digite o ID da motocicleta para apagar seu cadastro (0 para cancelar): '))
+                id_apagar = int(input('Digite o ID da motocicleta para apagar (0 para cancelar): '))
 
                 if id_apagar == 0:
                     print('Operação cancelada.\n')

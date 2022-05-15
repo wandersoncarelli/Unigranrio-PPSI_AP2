@@ -30,11 +30,11 @@ informações referente aos clientes, motocicletas e vendas.
     - [x] Voltar ao menu principal
     
   - [ ] Vendas
-    - [ ] Cadastrar
+    - [X] Cadastrar
     - [ ] Consultar
     - [ ] Atualizar
     - [ ] Apagar
-    - [ ] Voltar ao menu principal
+    - [X] Voltar ao menu principal
     
   - [x] Sair do programa
 

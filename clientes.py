@@ -1,6 +1,7 @@
 # Classe e funções para realizar as iterações com o menu de clientes
 
 # Construindo a classe clientes
+
 class Clientes:
     clientes = []  # Lista para armazenar os cadastros dos clientes
 
@@ -15,7 +16,7 @@ class Clientes:
                 cadastro['ID'] = self.clientes[-1]['ID'] + 1  # Vai buscar número do último ID e adicionar 1
             else:
                 cadastro['ID'] = 1  # Se não existir cadastros, vai atribuir o ID 1
-            cadastro['Nome'] = input('Nome: ')
+            cadastro['Nome'] = input('Nome completo: ')
             cadastro['Idade'] = int(input('Idade: '))
             cadastro['Sexo'] = input('Sexo: ')
             cadastro['Endereço'] = input('Endereço: ')

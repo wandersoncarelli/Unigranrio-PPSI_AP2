@@ -1,5 +1,6 @@
 from clientes import Clientes
 from motocicletas import Motocicletas
+from vendas import Vendas
 
 
 class Application:
@@ -33,8 +34,7 @@ class Application:
         elif self.menu_opcao == 2:
             self.menu_motocicleta()
         elif self.menu_opcao == 3:
-            print('Menu ainda não construido.')
-            # self.menu_vendas()
+            self.menu_vendas()
 
     # Construção do menu de clientes
     def menu_cliente(self):
@@ -121,7 +121,45 @@ class Application:
 
     # Construção do menu de vendas (ainda não iniciado)
     def menu_vendas(self):
-        pass
+        self.menu_opcao = -1
+        venda_opcao = -1
+        print('''MENU VENDAS:
+
+        [1] - Cadastrar venda
+        [2] - Consultar vendas
+        [3] - Atualizar venda
+        [4] - Apagar venda
+        [0] - Voltar ao menu anterior
+        ''')
+
+        while venda_opcao < 0 or venda_opcao > 4:
+            venda_opcao = int(input('Digite a opção escolhida: '))
+            print()
+            if venda_opcao < 0 or venda_opcao > 4:
+                print('Opção inválida.')
+        if venda_opcao == 0:
+            self.main_menu()
+        elif venda_opcao == 1:
+            Vendas().cadastrar()
+            self.menu_vendas()
+        elif venda_opcao == 2:
+            if len(Vendas().vendas) == 0:
+                print('Não existem vendas cadastradas.\n')
+            else:
+                Vendas().consultar()
+            self.menu_vendas()
+        elif venda_opcao == 3:
+            if len(Vendas().vendas) == 0:
+                print('Não existem vendas cadastradas.\n')
+            else:
+                Vendas().atualizar()
+            self.menu_vendas()
+        elif venda_opcao == 4:
+            if len(Vendas().vendas) == 0:
+                print('Não existem vendas cadastradas.\n')
+            else:
+                Vendas().apagar()
+            self.menu_vendas()
 
 
 Application()

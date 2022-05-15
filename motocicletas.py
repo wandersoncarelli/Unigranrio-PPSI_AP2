@@ -17,9 +17,9 @@ class Motocicletas:
             cadastro['Marca'] = input('Marca: ')
             cadastro['Modelo'] = input('Modelo: ')
             cadastro['Ano'] = int(input('Ano: '))
-            cadastro['Cilindrada'] = int(input('Cilindrada: '))
-            cadastro['Potência'] = int(input('Potência: '))
-            cadastro['Preço'] = int(input('Preço: R$'))
+            cadastro['Cilindrada'] = int(input('Cilindradas: '))
+            preco = float(input('Preço: R$'))
+            cadastro['Preço'] = str(f'R${preco:,.2f}')
             self.motocicletas.append(cadastro)  # Adiciona os dados de cadastro na lista
             cadastro = {}  # Apaga os dados atuais, necessário para não duplicar os cadastros na lista
             print('\nMotocicleta cadastrada com sucesso!')
@@ -34,17 +34,18 @@ class Motocicletas:
                     print('Opção inválida.\n')
 
     def mostrar_motocicletas(self):
-        print(40 * "=")
-        print(f'{"TABELA DE MOTOCICLETAS":^40}')
-        print(40 * "=")
-        print(f'{"ID":<6}{"MARCA":<14}{"MODELO":<14}{"ANO":>5}')
-        print(40 * "-")
+        print(54 * "=")
+        print(f'{"TABELA DE MOTOCICLETAS":^54}')
+        print(54 * "=")
+        print(f'{"ID":<5}{"MARCA":<14}{"MODELO":<14}{"ANO":<6}{"PREÇO":>14}')
+        print(54 * "-")
 
         # Imprimindo a lista de motocicletas em formato de tabela
         for i in range(0, len(self.motocicletas)):
-            print(f'{self.motocicletas[i]["ID"]:<6}{self.motocicletas[i]["Marca"]:<14}'
-                  f'{self.motocicletas[i]["Modelo"]:<14}{self.motocicletas[i]["Ano"]:>6}')
-        print(40 * "-")
+            print(f'{self.motocicletas[i]["ID"]:<5}{self.motocicletas[i]["Marca"]:<14}'
+                  f'{self.motocicletas[i]["Modelo"]:<14}{self.motocicletas[i]["Ano"]:<6}'
+                  f'{self.motocicletas[i]["Preço"]:>14}')
+        print(54 * "-")
         print()
 
     def consultar(self):
@@ -105,13 +106,12 @@ class Motocicletas:
             elif opcao_atualizar == 2:
                 self.motocicletas[id_atualizar]['Modelo'] = input('Digite o modelo: ')
             elif opcao_atualizar == 3:
-                self.motocicletas[id_atualizar]['Ano'] = input('Digite o sexo: ')
+                self.motocicletas[id_atualizar]['Ano'] = int(input('Digite o ano: '))
             elif opcao_atualizar == 4:
-                self.motocicletas[id_atualizar]['Cilindrada'] = input('Digite o endereço: ')
+                self.motocicletas[id_atualizar]['Cilindrada'] = int(input('Digite as cilindradas: '))
             elif opcao_atualizar == 5:
-                self.motocicletas[id_atualizar]['Potência'] = input('Digite a cidade: ')
-            elif opcao_atualizar == 6:
-                self.motocicletas[id_atualizar]['Preço'] = input('Digite o preço: R$')
+                preco = float(input('Digite o preço: R$'))
+                self.motocicletas[id_atualizar]['Preço'] = str(f'R${preco:,.2f}')
 
             if opcao_atualizar == 0:
                 print('Operação cancelada.\n')

@@ -101,10 +101,7 @@ class Application:
             Motocicletas().cadastrar()
             self.menu_motocicleta()
         elif motocicleta_opcao == 2:
-            if len(Motocicletas().motocicletas) == 0:
-                print('Não existem motocicletas cadastradas.\n')
-            else:
-                Motocicletas().consultar()
+            Motocicletas().consultar()
             self.menu_motocicleta()
         elif motocicleta_opcao == 3:
             if len(Motocicletas().motocicletas) == 0:

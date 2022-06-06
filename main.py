@@ -1,3 +1,4 @@
+import menu
 from menu import Menu  # Importando a classe Menu, criada no arquivo 'menu.py'
 
 
@@ -26,6 +27,7 @@ class Application:
                 print('Opção inválida.\n')  # Mensagem de erro, caso digite uma opção que não exista
             else:
                 if self.menu_opcao == 0:
+                    menu.desconectar_bd()
                     print('Você saiu do programa.')
                     exit()  # Encerra a reprodução do código
                 elif self.menu_opcao == 1:

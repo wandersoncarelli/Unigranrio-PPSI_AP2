@@ -1,25 +1,30 @@
 from clientes import Clientes
 from motocicletas import Motocicletas
 from vendas import Vendas
+from dados import BancoDados
 
 
 # Construindo a classe Menu
 class Menu:
+
+    def __init__(self):
+        BancoDados().__init__()
 
     # Construindo o menu de clientes
     def menu_clientes(self):
         print('''   MENU CLIENTES:
 
         [1] - Cadastrar cliente
-        [2] - Consultar cliente
-        [3] - Atualizar cliente
-        [4] - Apagar cliente
-        [0] - Voltar ao menu anterior
+        [2] - Consultar cadastro
+        [3] - Procurar cadastro por nome
+        [4] - Atualizar cadastro
+        [5] - Apagar cadastro
+        [0] - Voltar ao menu principal
         ''')
 
         while True:
             cliente_opcao = int(input('Digite a opção escolhida: '))
-            if cliente_opcao < 0 or cliente_opcao > 4:
+            if cliente_opcao < 0 or cliente_opcao > 5:
                 print('Opção inválida.')
             else:
                 print()
@@ -32,9 +37,12 @@ class Menu:
                     Clientes().consultar()
                     return self.menu_clientes()
                 elif cliente_opcao == 3:
-                    Clientes().atualizar()
+                    Clientes().procurar()
                     return self.menu_clientes()
                 elif cliente_opcao == 4:
+                    Clientes().atualizar()
+                    return self.menu_clientes()
+                elif cliente_opcao == 5:
                     Clientes().apagar()
                     return self.menu_clientes()
             print()
@@ -44,15 +52,16 @@ class Menu:
         print('''   MENU MOTOCICLETAS:
 
         [1] - Cadastrar motocicleta
-        [2] - Consultar motocicleta
-        [3] - Atualizar motocicleta
-        [4] - Apagar motocicleta
-        [0] - Voltar ao menu anterior
+        [2] - Consultar cadastro
+        [3] - Procurar cadastro por marca
+        [4] - Atualizar cadastro
+        [5] - Apagar cadastro
+        [0] - Voltar ao menu principal
         ''')
 
         while True:
             motocicleta_opcao = int(input('Digite a opção escolhida: '))
-            if motocicleta_opcao < 0 or motocicleta_opcao > 4:
+            if motocicleta_opcao < 0 or motocicleta_opcao > 5:
                 print('Opção inválida.')
             else:
                 print()
@@ -65,9 +74,12 @@ class Menu:
                     Motocicletas().consultar()
                     return self.menu_motocicletas()
                 elif motocicleta_opcao == 3:
-                    Motocicletas().atualizar()
+                    Motocicletas().procurar()
                     return self.menu_motocicletas()
                 elif motocicleta_opcao == 4:
+                    Motocicletas().atualizar()
+                    return self.menu_motocicletas()
+                elif motocicleta_opcao == 5:
                     Motocicletas().apagar()
                     return self.menu_motocicletas()
             print()
@@ -76,11 +88,11 @@ class Menu:
     def menu_vendas(self):
         print('''   MENU VENDAS:
 
-        [1] - Cadastrar venda
-        [2] - Consultar vendas
-        [3] - Atualizar venda
+        [1] - Efetuar venda
+        [2] - Consultar todas as vendas
+        [3] - Procurar venda por cliente/marca
         [4] - Apagar venda
-        [0] - Voltar ao menu anterior
+        [0] - Voltar ao menu principal
         ''')
 
         while True:
@@ -98,8 +110,13 @@ class Menu:
                     Vendas().consultar()
                     return self.menu_vendas()
                 elif venda_opcao == 3:
-                    Vendas().atualizar()
+                    Vendas().procurar()
                     return self.menu_vendas()
                 elif venda_opcao == 4:
                     Vendas().apagar()
                     return self.menu_vendas()
+
+
+# Função para desconectar o banco de dados
+def desconectar_bd():
+    BancoDados().desconectar()

@@ -16,32 +16,34 @@ informações referente aos clientes, motocicletas e vendas.
 ---
 ## Progresso de desenvolvimento:
 * #### Menus
-  - [x] Clientes
-    - [x] Cadastrar
-    - [x] Consultar
-    - [x] Atualizar
-    - [x] Apagar
-    - [x] Voltar ao menu principal
+  - [X] Clientes
+    - [X] Cadastrar cliente
+    - [X] Consultar cadastro
+    - [X] Procurar cadastro por nome
+    - [X] Atualizar cadastro
+    - [X] Apagar cadastro
+    - [X] Voltar ao menu principal
     
-  - [x] Motocicletas 
-    - [x] Cadastrar
-    - [x] Consultar
-    - [x] Atualizar
-    - [x] Apagar
-    - [x] Voltar ao menu principal
+  - [X] Motocicletas 
+    - [X] Cadastrar motocicleta
+    - [X] Consultar cadastro
+    - [X] Procurar cadastro por marca
+    - [X] Atualizar cadastro
+    - [X] Apagar cadastro
+    - [X] Voltar ao menu principal
     
-  - [ ] Vendas
-    - [ ] Cadastrar
-    - [ ] Consultar
-    - [ ] Atualizar
-    - [ ] Apagar
-    - [ ] Voltar ao menu principal
+  - [X] Vendas
+    - [X] Efetuar venda
+    - [X] Consultar todas as vendas
+    - [X] Procurar venda por cliente/marca
+    - [X] Apagar venda
+    - [X] Voltar ao menu principal
     
-  - [x] Sair do programa
+  - [X] Sair do programa
 
 ---
 
-* #### Manipulação de arquivos
-  - [ ] Informações de clientes
-  - [ ] Informações de motocicletas
-  - [ ] Informações de vendas
+* #### Manipulação de banco de dados
+  - [X] Informações de clientes
+  - [X] Informações de motocicletas
+  - [X] Informações de vendas

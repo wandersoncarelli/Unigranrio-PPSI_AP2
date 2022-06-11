@@ -1,6 +1,6 @@
-# Unigranrio - PPSI (AP2)
+# Unigranrio - PPSI (AP2/AP3)
 
-A atividade prática 2 da matéria de **Prática de Programação em Sistemas de Informação** cria uma suposição onde
+As atividades práticas 2 e 3 da matéria de **Prática de Programação em Sistemas de Informação** cria uma suposição onde
 sejamos contratados por uma concessionária de porte médio, para implementar um sistema desenvolvido em Python com as 
 seguintes funções: 
 
